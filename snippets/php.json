@@ -1,0 +1,142 @@
+{
+	// Place your snippets for php here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "s1",
+		"body": [
+			"console.log('$1');"
+		],
+		"description": "Print to console"
+	},
+	"Print": {
+		"prefix": "s2",
+		"body": [
+			"echo '<pre>';",
+			"print_r(get_defined_vars()$1);",
+			"echo '<pre>';"
+		],
+		"description": "print value"
+	},
+	"DeleteSession": {
+		"prefix": "s3",
+		"body": [
+			"session_start();",
+			"echo '<pre>';",
+			"print_r($1);",
+			"session_destroy();",
+			"$$_SESSION[]='';"
+		],
+		"description": "delete session"
+	},
+	"ShowAllError": {
+		"prefix": "s4",
+		"body": [
+			"ini_set('display_errors', 1);",
+			"ini_set('display_startup_errors', 1);",
+			"error_reporting(E_ALL);"
+		],
+		"description": "show log"
+	},
+	"br": {
+		"prefix": "br",
+		"body": [
+			". '<br/>'$1"
+		],
+		"description": "downline"
+	},
+	"die": {
+		"prefix": "die",
+		"body": [
+			"die();"
+		],
+		"description": "die"
+	},
+	"session": {
+		"prefix": "session",
+		"body": [
+			"if (session_id() == '') {"
+			"	session_cache_limiter('private');"
+			"	session_cache_expire(0);"
+			"	session_start();"
+			"}"
+		],
+		"description": "init session"
+	},
+	"timezone": {
+		"prefix": "timezone",
+		"body": [
+			"date_default_timezone_set('Asia/Tokyo');"
+		],
+		"description": "set timezone"
+	},
+	"pdo": {
+		"prefix": "pdo",
+		"body": [
+		"protected static function getDB(){"
+		"	$$config = new Config();"
+		"	static $$db = null;"
+		"	if ($$db === null) {"
+		"		$$dsn = 'mysql:host=' . $$config->db_server_partner_name . ';dbname=' . $$config->name_partner_db . ';charset=utf8';"
+		"		$$db = new PDO($$dsn, $$config->user_partner_db, $$config->pass_partner_db);"
+
+		"		// Throw an Exception when an error occurs"
+		"		$$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);"
+		"	}"
+		"	return $$db;"
+		"}"
+		],
+		"description": "init pdo"
+	},
+	"prepare": {
+		"prefix": "prepare",
+		"body": [
+			"$$stmt = $$db->prepare($$query);"
+			"$$stmt->bindParam(':Wk_id_c', $$Wk_id_c, PDO::PARAM_STR);"
+			"$$stmt->bindParam(':Wk_pass_c', $$Wk_pass_c, PDO::PARAM_STR);"
+			"$$stmt->execute();"
+			"if ($$selectAll == true)"
+			"return $$stmt->fetchAll(PDO::FETCH_ASSOC);"
+
+		"if ($$count == true) {"
+		"	return $$stmt->rowCount();"
+		"}"
+		"return $$stmt->fetch(PDO::FETCH_ASSOC);"
+		],
+		"description": "prepare pdo"
+	},
+	"speed": {
+		"prefix": "speed",
+		"body": [
+			"$$startTime = microtime(true);",
+			"$1",
+			"echo 'Time:  ' . number_format(( microtime(true) - $$startTime), 4) . ' Seconds';"
+		],
+		"description": "prepare pdo"
+	},
+	"changeText": {
+		"prefix": "s6",
+		"body": [
+			"// ↓↓　2022/$1/$2 KhanhDinh - Change for PHP8 [start]$3",
+			"// ↑↑　2022/$1/$2 KhanhDinh - Change for PHP8 [end]$4"
+		],
+		"description": "prepare pdo"
+	},
+	"try-catch": {
+		"prefix": "try",
+		"body": [
+			"try {",
+			"	$1",
+			"} catch (PDOException $$e) {",
+			"	return $$e->getMessage();",
+			"} catch (Exception $$e) {",
+			"	return $$e->getMessage();",
+			"} catch (\\Throwable $$th) {",
+			"	throw new Exception('$2');",
+			"}",
+		],
+		"description": "prepare pdo"
+	},
+}

@@ -1,0 +1,31 @@
+{
+	"tabnine.experimentalAutoImports": true,
+	"workbench.iconTheme": "material-icon-theme",
+	"php.completion.parameters": "parameters",
+	"php.executables": {
+		"v7.3": "C:\\wamp64\\bin\\php\\php7.3.12\\php.exe",
+		"v7.4": "D:\\App\\laragon\\bin\\php\\php-7.4.33-nts-Win32-vc15-x64\\php.exe",
+		"v8.1": "D:\\App\\laragon\\bin\\php\\php-8.1.11-nts-Win32-vs16-x64\\php.exe"
+	},
+	"php.format.rules.alignConsecutiveAssignments": true,
+	"php.format.rules.arrayInitializersAlignKeyValuePairs": true,
+	"php.format.rules.arrayInitializersNewLineAfterLastElement": true,
+	"php.format.rules.spaceWithinWhileParens": true,
+	"php.format.rules.spaceWithinIfParens": true,
+	"php.format.rules.spaceWithinForParens": true,
+	"php.format.rules.spaceWithinForeachParens": true,
+	"php.format.rules.spaceWithinArrayInitilizersParens": true,
+	"php.format.rules.spaceBeforeParenthesesInControlStatements": true,
+	"php.format.rules.spaceAroundConcatenation": true,
+	"[php]": {
+		"editor.defaultFormatter": "DEVSENSE.phptools-vscode"
+	},
+	"php.inlayHints.types.return": true,
+	"php.inlayHints.types.suppressVariableFromLiteral": false,
+	"php.format.rules.spaceWithinCatchParens": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"intelephense.environment.phpVersion": "7.4.0",
+	"php.version": "7.4.0",
+}

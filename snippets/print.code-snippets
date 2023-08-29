@@ -1,0 +1,47 @@
+{
+    // place your global snippets here. each snippet is defined under a snippet name and has a scope, prefix, body and
+    // description. add comma separated ids of the languages where the snippet is applicable in the scope field. if scope
+    // is left empty or omitted, the snippet gets applied to all languages. the prefix is what is
+    // used to trigger the snippet and the body will be expanded and inserted. possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+    // placeholders with the same ids are connected.
+    // example:
+    "print to console": {
+        "scope": "javascript,typescript",
+        "prefix": "s1",
+        "body": ["console.log('$1');"],
+        "description": "log output to console"
+    },
+    "Print to axios": {
+        "scope": "javascript,typescript",
+        "prefix": "axios",
+        "body": [
+            "axios({ url: '$1',method: '$2', data: {$3}, headers: {'Content-Type': 'application/json'},}) .then(response => {$4}).catch(function (error) {console.log('error from image :');});"
+        ],
+        "description": "Print to console"
+    },
+	"s5": {
+		"prefix": "s5",
+		"body": [
+			"// ↓↓　<2022/$1/$2> <KhanhDinh> <$3>",
+			"$4",
+			"// ↑↑　<2022/$1/$2> <KhanhDinh> <$3>"
+		],
+		"description": "author"
+	},
+	"*": {
+		"prefix": "*",
+		"body": [
+			"/**",
+			"* $1",
+			"*",
+			"* @param $2",
+			"* ",
+			"* @author Khanh",
+			"* @return $3",
+			"*/ ",
+
+		],
+		"description": "author"
+	},
+}
