@@ -1,0 +1,2 @@
+# vscode
+backup setting.json
